@@ -3,12 +3,124 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".controllers.fragments.DashboardFragment">
     
     <android.support.v7.widget.CardView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/verticalSeparator"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/horizontalSeparator"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_margin="16dp"
             android:layout_width="0dp"
-            android:layout_height="0dp"></android.support.v7.widget.CardView>
+            android:layout_height="80dp">
+
+        <TextView
+                android:text="Start Day"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.constraint.Guideline
+            android:id="@+id/verticalSeparator"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <android.support.v7.widget.CardView
+            app:layout_constraintStart_toEndOf="@id/verticalSeparator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/horizontalSeparator"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_margin="16dp"
+            android:layout_width="0dp"
+            android:layout_height="80dp">
+
+        <TextView
+                android:text="Start Visits"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.constraint.Guideline
+            android:id="@+id/horizontalSeparator"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+    <android.support.v7.widget.CardView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/verticalSeparator"
+            app:layout_constraintTop_toBottomOf="@id/horizontalSeparator"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_margin="16dp"
+            android:layout_width="0dp"
+            android:layout_height="80dp">
+
+        <TextView
+                android:text="End Day"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+            android:id="@+id/uploadCardView"
+            app:layout_constraintStart_toEndOf="@id/verticalSeparator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontalSeparator"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_margin="16dp"
+            android:layout_width="0dp"
+            android:layout_height="80dp">
+
+        <TextView
+                android:text="Upload"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+            app:layout_constraintTop_toBottomOf="@id/uploadCardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_margin="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                app:srcCompat="@drawable/ic_iconmonstr_shopping_cart_2"
+                android:padding="16dp"
+                android:contentDescription="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="Review Stock"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:padding="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </android.support.v7.widget.CardView>
+
+
 
 
 </android.support.constraint.ConstraintLayout>
