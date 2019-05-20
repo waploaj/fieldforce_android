@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="TradeTollMaterialTheme" parent="SuperMaterialTheme">
+    <style name="TradeToolMaterialTheme" parent="SuperMaterialTheme">
 
     </style>
 
@@ -11,8 +11,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="colorControlHighlight">@color/colorPrimary</item>
-        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <!--<item name="colorControlHighlight">@color/colorAccent</item>-->
+        <item name="colorControlNormal">@color/colorAccent</item>
         <item name="colorButtonNormal">@color/colorPrimaryDark</item>
         <item name="colorControlActivated">@color/colorAccent</item>
     </style>
