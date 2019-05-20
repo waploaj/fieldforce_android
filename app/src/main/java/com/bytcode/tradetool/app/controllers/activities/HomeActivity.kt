@@ -13,8 +13,12 @@ import android.view.Menu
 import android.view.MenuItem
 import com.bytcode.tradetool.app.R
 import com.bytcode.tradetool.app.controllers.fragments.DashboardFragment
+import com.bytcode.tradetool.app.interfaces.OnFragmentInteractionListener
 
-class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class HomeActivity :
+    AppCompatActivity(),
+    NavigationView.OnNavigationItemSelectedListener,
+    OnFragmentInteractionListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,6 +65,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onFragmentCreated(title: String?) {
+        supportActionBar?.title = title
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
