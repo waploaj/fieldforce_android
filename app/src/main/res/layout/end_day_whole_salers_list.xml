@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+            android:id="@+id/wholeSellerCard"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:id="@+id/wholeSellerImage"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:contentDescription="@null"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"/>
+
+            <TextView
+                    android:id="@+id/wholeSellerName"
+                    android:text="Joseph Daudi"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toTopOf="@id/wholeSellerImage"
+                    app:layout_constraintStart_toEndOf="@id/wholeSellerImage"
+                    android:layout_margin="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/wholeSellerId"
+                    android:text="TZ0000001WS"
+                    app:layout_constraintTop_toBottomOf="@id/wholeSellerName"
+                    app:layout_constraintStart_toEndOf="@id/wholeSellerImage"
+                    app:layout_constraintBottom_toBottomOf="@id/wholeSellerImage"
+                    app:layout_constraintVertical_bias="0"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/wholeSellerLocation"
+                    android:text="Dar es Salaam"
+                    app:layout_constraintTop_toTopOf="@id/wholeSellerName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/wholeSellerImage"
+                    android:layout_margin="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+    <View
+            app:layout_constraintTop_toBottomOf="@+id/wholeSellerCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f5f5f5" />
+</android.support.constraint.ConstraintLayout>

@@ -9,41 +9,40 @@ import android.view.ViewGroup
 import com.bytcode.tradetool.app.R
 import com.bytcode.tradetool.app.interfaces.OnFragmentInteractionListener
 
-class DashboardFragment : Fragment(), OnFragmentInteractionListener {
 
+class SettingsFragment : Fragment(), OnFragmentInteractionListener {
     private var listener: OnFragmentInteractionListener? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        listener?.onFragmentCreated("Home")
+        listener?.onFragmentCreated("Settings")
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_dashboard, container, false)
+        return inflater.inflate(R.layout.fragment_settings, container, false)
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is OnFragmentInteractionListener) {
-            this.listener = context
+            listener = context
         } else {
             throw RuntimeException("$context must implement OnFragmentInteractionListener")
         }
     }
+
+    override fun onFragmentCreated(title: String?) {}
 
     override fun onDetach() {
         super.onDetach()
         listener = null
     }
 
-    override fun onFragmentCreated(title: String?) {}
-
     companion object {
         @JvmStatic
-        fun newInstance() = DashboardFragment()
+        fun newInstance() = SettingsFragment()
     }
 }

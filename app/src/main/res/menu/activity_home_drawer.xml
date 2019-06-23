@@ -26,18 +26,22 @@
         <menu>
             <item
                     android:id="@+id/nav_profile"
+                    android:checkable="true"
                     android:icon="@drawable/ic_user"
                     android:title="Profile"/>
             <item
                     android:id="@+id/nav_settings"
+                    android:checkable="true"
                     android:icon="@drawable/ic_iconmonstr_gear_1"
                     android:title="Settings"/>
             <item
                     android:id="@+id/nav_help"
+                    android:checkable="true"
                     android:icon="@drawable/ic_iconmonstr_help_2"
                     android:title="Help"/>
             <item
                     android:id="@+id/nav_logout"
+                    android:checkable="true"
                     android:icon="@drawable/ic_iconmonstr_log_out_9"
                     android:title="Logout"/>
         </menu>

@@ -9,9 +9,24 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/TradeToolMaterialTheme">
+        <activity android:name=".controllers.activities.CompetitorProductsActivity">
+        </activity>
+        <activity android:name=".controllers.activities.PmiMaterialsActivity">
+        </activity>
+        <activity android:name=".controllers.activities.RegisterPosActivity">
+        </activity>
+        <activity android:name=".controllers.activities.RegisterProductActivity">
+        </activity>
+        <activity android:name=".controllers.activities.StartVisitsActivity">
+        </activity>
+        <activity android:name=".controllers.activities.EndDayActivity">
+        </activity>
+        <activity android:name=".controllers.activities.StartDayActivity">
+        </activity>
         <activity android:name=".controllers.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -20,7 +35,7 @@
                 android:label="@string/title_activity_home"
                 android:theme="@style/TradeToolMaterialTheme.NoActionBar">
         </activity>
-        <activity android:name=".controllers.activities.LoginActivity" />
+        <activity android:name=".controllers.activities.LoginActivity"/>
     </application>
 
 </manifest>
