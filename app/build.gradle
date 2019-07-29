@@ -9,12 +9,18 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.bytcode.tradetool.app"
-        minSdkVersion 14
+        applicationId "com.bytcode.befreelancer.app"
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
     }
 
     dataBinding {
@@ -23,8 +29,15 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug{
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
@@ -41,10 +54,40 @@ dependencies {
     implementation 'com.android.support:cardview-v7:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:design:28.0.0'
-    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:gridlayout-v7:28.0.0'
+    implementation 'com.android.support:customtabs:28.0.0'
+
+    //implementation 'com.google.android.gms:play-services-maps:16.1.0'
 //    implementation 'com.google.android.gms:play-services-ads:17.2.0'
     implementation 'com.android.support:gridlayout-v7:28.0.0'
     kapt 'com.android.databinding:compiler:3.1.4'
+
+    //implementation 'com.google.firebase:firebase-core:16.0.9'
+    //implementation 'com.google.firebase:firebase-messaging:18.0.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+
+    // Kotlin anko
+    implementation "org.jetbrains.anko:anko:$anko_version"
+    implementation "org.jetbrains.anko:anko-design:$anko_version"
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+
+    // Gson dependencies
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.josedaudi:MultiSelectionSpinner:56437fe5e2'
+
+    implementation 'io.sentry:sentry-android:1.7.16'
+    implementation 'org.slf4j:slf4j-nop:1.7.25'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    implementation("com.squareup.okhttp3:okhttp:3.14.1")
+
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.3.1'
+    implementation 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
 }
 
 android.defaultConfig.vectorDrawables.useSupportLibrary = true

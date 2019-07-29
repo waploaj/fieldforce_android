@@ -8,6 +8,7 @@
         tools:context=".controllers.fragments.DashboardFragment">
     
     <android.support.v7.widget.CardView
+            android:id="@+id/startADay"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/verticalSeparator"
             app:layout_constraintTop_toTopOf="parent"

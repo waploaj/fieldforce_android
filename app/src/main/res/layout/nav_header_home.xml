@@ -13,15 +13,17 @@
         android:orientation="vertical"
         android:gravity="bottom">
 
-    <ImageView
+    <com.github.siyamed.shapeimageview.CircularImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
-            app:srcCompat="@drawable/user"
+            android:src="@drawable/user"
+            app:siBorderAlpha="0"
             android:contentDescription="@string/nav_header_desc"
-            android:id="@+id/imageView"/>
+            android:id="@+id/userImageView"/>
 
     <TextView
+            android:id="@+id/userFullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
@@ -34,6 +36,6 @@
             android:layout_height="wrap_content"
             android:text="+255 625781127"
             android:textColor="#ffffff"
-            android:id="@+id/textView"/>
+            android:id="@+id/userPhoneNumber"/>
 
 </LinearLayout>

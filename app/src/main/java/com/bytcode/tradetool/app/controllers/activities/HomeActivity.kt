@@ -12,10 +12,17 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import com.bytcode.tradetool.app.R
 import com.bytcode.tradetool.app.controllers.fragments.*
 import com.bytcode.tradetool.app.interfaces.OnFragmentInteractionListener
-import com.google.android.gms.maps.model.Dash
+import com.bytcode.tradetool.app.models.Employee
+import com.bytcode.tradetool.app.utils.api.response.LoginResponse
+import com.bytcode.tradetool.app.utils.config.App
+import com.github.siyamed.shapeimageview.CircularImageView
+import com.google.gson.Gson
+
+//import com.google.android.gms.maps.model.Dash
 
 class HomeActivity :
     AppCompatActivity(),
@@ -24,6 +31,8 @@ class HomeActivity :
 
     private lateinit var fragment: Fragment
     private lateinit var fragmentTag: String
+    private lateinit var mEmployee: Employee
+    private lateinit var loginResponse: LoginResponse
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +41,6 @@ class HomeActivity :
         toolbar.title = "Trade Tool"
         setSupportActionBar(toolbar)
 
-
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val toggle = ActionBarDrawerToggle(
@@ -40,6 +48,17 @@ class HomeActivity :
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
+
+        loginResponse = Gson().fromJson(App.sharedPrefs.user, LoginResponse::class.java)
+        mEmployee = loginResponse.employee
+
+        val headerView = navView.getHeaderView(0)
+        val userPhoneNumber = headerView.findViewById<TextView>(R.id.userPhoneNumber)
+        val userFullName = headerView.findViewById<TextView>(R.id.userFullName)
+        val userProfileImageView = headerView.findViewById<CircularImageView>(R.id.userImageView)
+
+        userPhoneNumber.text = mEmployee.phoneNumber
+        userFullName.text = mEmployee.getFullName()
 
         navView.setNavigationItemSelectedListener(this)
 
@@ -80,39 +99,52 @@ class HomeActivity :
             R.id.nav_home -> {
                 fragment = DashboardFragment.newInstance()
                 fragmentTag = "dashboardFragment"
+
+                changeFragment(fragment, fragmentTag)
             }
             R.id.nav_schedules -> {
                 fragment = ScheduleFragment.newInstance()
                 fragmentTag = "scheduleFragment"
+
+                changeFragment(fragment, fragmentTag)
             }
             R.id.nav_reports -> {
                 fragment = ReportsFragment.newInstance()
                 fragmentTag = "reportsFragment"
+
+                changeFragment(fragment, fragmentTag)
             }
             R.id.nav_stock -> {
                 fragment = DashboardFragment.newInstance()
                 fragmentTag = "dashboardFragment"
+
+                changeFragment(fragment, fragmentTag)
             }
             R.id.nav_profile -> {
                 fragment = ProfileFragment.newInstance()
                 fragmentTag = "profileFragment"
+
+                changeFragment(fragment, fragmentTag)
             }
             R.id.nav_settings -> {
                 fragment = SettingsFragment.newInstance()
                 fragmentTag = "settingsFragment"
+
+                changeFragment(fragment, fragmentTag)
             }
             R.id.nav_help -> {
                 fragment = HelpFragment.newInstance()
                 fragmentTag = "helpFragment"
+
+                changeFragment(fragment, fragmentTag)
             }
             R.id.nav_logout -> {
+                App.sharedPrefs.isLoggedIn = false
                 val intent = Intent(this@HomeActivity, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             }
         }
-
-        changeFragment(fragment, fragmentTag)
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

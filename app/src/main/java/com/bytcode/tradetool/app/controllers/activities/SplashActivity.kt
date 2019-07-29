@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
 import com.bytcode.tradetool.app.R
+import com.bytcode.tradetool.app.utils.config.App
 
 class SplashActivity : AppCompatActivity() {
 
@@ -31,9 +32,15 @@ class SplashActivity : AppCompatActivity() {
                     // pb.progress = progressStatus
                 }
                 if (progressStatus == 100) {
-                    val activityIntent = Intent(this, LoginActivity::class.java)
-                    startActivity(activityIntent)
-                    finish()
+                    if(!App.sharedPrefs.isLoggedIn) {
+                        val activityIntent = Intent(this, LoginActivity::class.java)
+                        startActivity(activityIntent)
+                        finish()
+                    }else{
+                        val activityIntent = Intent(this, HomeActivity::class.java)
+                        startActivity(activityIntent)
+                        finish()
+                    }
                     break
                 }
             } while (progressStatus < 100)
