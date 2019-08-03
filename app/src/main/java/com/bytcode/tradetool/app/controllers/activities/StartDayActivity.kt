@@ -13,25 +13,8 @@ import com.google.gson.Gson
 
 class StartDayActivity : AppCompatActivity() {
 
-    private lateinit var mCallCardAdapter: CallCardAdapter
-    private lateinit var mCallCardResponse: CallCardResponse
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start_day)
-
-        mCallCardResponse = Gson().fromJson(App.sharedPrefs.callCard, CallCardResponse::class.java)
-
-        val callCardsRecyclerViews = findViewById<RecyclerView>(R.id.callCardsRecyclerViews)
-        mCallCardAdapter = CallCardAdapter(this, mCallCardResponse.response!!){callCard ->
-
-            // Log Card Selected to start visits
-            Toast.makeText(this@StartDayActivity, "Clicked ${callCard.cardId}", Toast.LENGTH_LONG).show()
-
-        }
-
-        callCardsRecyclerViews.layoutManager = LinearLayoutManager(this)
-        callCardsRecyclerViews.adapter = mCallCardAdapter
-        callCardsRecyclerViews.setHasFixedSize(false)
     }
 }

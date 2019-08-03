@@ -19,7 +19,7 @@
             android:layout_height="80dp">
 
         <TextView
-                android:text="Start Day"
+                android:text="@string/start_day"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -34,6 +34,7 @@
             android:layout_height="wrap_content"/>
 
     <android.support.v7.widget.CardView
+            android:id="@+id/startVisits"
             app:layout_constraintStart_toEndOf="@id/verticalSeparator"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -44,7 +45,7 @@
             android:layout_height="80dp">
 
         <TextView
-                android:text="Start Visits"
+                android:text="@string/start_visits"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>

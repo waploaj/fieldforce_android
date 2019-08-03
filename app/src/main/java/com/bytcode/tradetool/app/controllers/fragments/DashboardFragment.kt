@@ -9,10 +9,11 @@ import android.support.v7.widget.CardView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
+import android.widget.ImageButton
 import android.widget.Toast
 import com.bytcode.tradetool.app.R
-import com.bytcode.tradetool.app.adapters.CallCardAdapter
-import com.bytcode.tradetool.app.controllers.activities.StartDayActivity
+import com.bytcode.tradetool.app.controllers.activities.StartVisitsActivity
 import com.bytcode.tradetool.app.interfaces.OnFragmentInteractionListener
 import com.bytcode.tradetool.app.utils.api.ApiClient
 import com.bytcode.tradetool.app.utils.api.ApiService
@@ -20,10 +21,8 @@ import com.bytcode.tradetool.app.utils.api.response.CallCardResponse
 import com.bytcode.tradetool.app.utils.api.response.LoginResponse
 import com.bytcode.tradetool.app.utils.config.App
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.fragment_dashboard.*
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -52,6 +51,7 @@ class DashboardFragment : Fragment(), OnFragmentInteractionListener {
         mView = inflater.inflate(R.layout.fragment_dashboard, container, false)
 
         val startADay = mView.findViewById<CardView>(R.id.startADay)
+        val startVisits = mView.findViewById<CardView>(R.id.startVisits)
 
         if(App.sharedPrefs.callCard == null || App.sharedPrefs.callCard == "") {
 
@@ -82,8 +82,37 @@ class DashboardFragment : Fragment(), OnFragmentInteractionListener {
             val visitTypeDialog = AlertDialog.Builder(mView.context)
             val visitTypeDialogView = layoutInflater.inflate(R.layout.start_day_dialog, null)
             visitTypeDialog.setView(visitTypeDialogView)
+            visitTypeDialog.setCancelable(false)
+
+            val visitOneCheckBox = visitTypeDialogView.findViewById<CheckBox>(R.id.visitOne)
+            val visitTwoCheckBox = visitTypeDialogView.findViewById<CheckBox>(R.id.visitTwo)
+
+            val visitDialogCloseBtn = visitTypeDialogView.findViewById<ImageButton>(R.id.closeBtn)
+
+            visitOneCheckBox!!.setOnClickListener{
+                if(visitOneCheckBox.isChecked){
+                    visitTwoCheckBox!!.isChecked = false
+                    App.sharedPrefs.visitType = "visitOne"
+                }
+            }
+            visitTwoCheckBox!!.setOnClickListener {
+                if(visitTwoCheckBox.isChecked){
+                    visitOneCheckBox.isChecked = false
+                    App.sharedPrefs.visitType = "visitTwo"
+                }
+            }
+
             val dialog = visitTypeDialog.create()
             dialog.show()
+
+            visitDialogCloseBtn.setOnClickListener {
+                dialog.dismiss()
+            }
+        }
+
+        startVisits.setOnClickListener {
+            val intent = Intent(mView.context, StartVisitsActivity::class.java)
+            startActivity(intent)
         }
 
         return mView

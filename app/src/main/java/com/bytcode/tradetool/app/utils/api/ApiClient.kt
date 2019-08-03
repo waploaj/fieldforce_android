@@ -1,6 +1,7 @@
 package com.bytcode.tradetool.app.utils.api
 
 import com.bytcode.tradetool.app.utils.api.response.CallCardResponse
+import com.bytcode.tradetool.app.utils.api.response.CustomerResponse
 import com.bytcode.tradetool.app.utils.api.response.LoginResponse
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
@@ -16,4 +17,7 @@ interface ApiClient {
 
     @POST("CustomerApi/get_call_cards")
     fun getCallCards(@Body requestBody: RequestBody): Call<CallCardResponse>
+
+    @POST("CustomerApi/get_call_card_customers")
+    fun getCallCardCustomers(@Body requestBody: RequestBody): Call<CustomerResponse>
 }

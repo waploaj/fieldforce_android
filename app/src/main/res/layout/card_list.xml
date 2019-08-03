@@ -3,7 +3,8 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
     <android.support.v7.widget.CardView
             app:layout_constraintTop_toTopOf="parent"
@@ -18,27 +19,9 @@
 
         <TextView
                 android:id="@+id/cardName"
-                android:text="Card One"
+                tools:text="Card One"
                 android:padding="15dp"
                 android:textSize="16sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <RadioButton
-                android:id="@+id/visitTwo"
-                android:layout_gravity="end|center_vertical"
-                android:text="Visit 2"
-                android:layout_marginRight="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <RadioButton
-                android:id="@+id/visitOne"
-                android:layout_gravity="end|center_vertical"
-                android:layout_marginEnd="100dp"
-                android:layout_marginRight="60dp"
-                android:text="Visit 1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
