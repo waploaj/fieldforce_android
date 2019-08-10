@@ -1,11 +1,16 @@
 package com.bytcode.tradetool.app.controllers.activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.TextView
 import com.bytcode.tradetool.app.R
 import com.bytcode.tradetool.app.adapters.CustomerAdapter
 import com.bytcode.tradetool.app.models.CallCard
@@ -53,8 +58,38 @@ class CustomerListActivity : AppCompatActivity() {
                     mCustomerResponse = response.body()
 
                     val customersRecyclerView = findViewById<RecyclerView>(R.id.customersRecyclerView)
-                    mCustomerAdapter = CustomerAdapter(this@CustomerListActivity, mCustomerResponse!!.response){
-                            customer ->
+                    mCustomerAdapter = CustomerAdapter(this@CustomerListActivity, mCustomerResponse!!.response){ customer  ->
+
+                        val customerDetailDialog = AlertDialog.Builder(this@CustomerListActivity)
+                        val customerDetailView = layoutInflater.inflate(R.layout.customer_detail_dialog, null)
+                        customerDetailDialog.setView(customerDetailView)
+                        customerDetailDialog.setCancelable(false)
+                        val dialog = customerDetailDialog.create()
+
+                        val closeBtn = customerDetailView.findViewById<ImageButton>(R.id.closeBtn)
+                        val customerShopName = customerDetailView.findViewById<TextView>(R.id.customerShopName)
+                        val customerAddress = customerDetailView.findViewById<TextView>(R.id.customerAddress)
+                        val customerPhoneNumber = customerDetailView.findViewById<TextView>(R.id.customerPhoneNumber)
+                        val customerAddressTwo = customerDetailView.findViewById<TextView>(R.id.customerAddressTwo)
+                        val checkInBtn = customerDetailView.findViewById<Button>(R.id.checkInBtn)
+                        val getLocationBtn = customerDetailView.findViewById<Button>(R.id.getLocationBtn)
+
+                        customerShopName.text = customer.storeBussinesName
+                        customerAddress.text = customer.getCustomerAddress()
+                        customerPhoneNumber.text = customer.phoneNumber
+                        customerAddressTwo.text = customer.addressOne
+
+                        dialog.show()
+
+                        closeBtn.setOnClickListener {
+                            dialog.dismiss()
+                        }
+
+                        checkInBtn.setOnClickListener {
+                            val intent = Intent(this@CustomerListActivity, CheckInActivity::class.java)
+                            startActivity(intent)
+                        }
+
                     }
 
                     customersRecyclerView.layoutManager = GridLayoutManager(this@CustomerListActivity, 3)

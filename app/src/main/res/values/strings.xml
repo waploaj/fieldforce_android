@@ -18,11 +18,19 @@
         https://6878b400f4024b3fa1bb23566198aa67@sentry.io/1489508
     </string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="start_visits">Start Visits</string>
     <string name="start_day">Start Day</string>
     <string name="no_related_visits">No related visits</string>
     <string name="select_visit_type">Select Visit type to proceed</string>
     <string name="joseph_daudi">Joseph Daudi</string>
+    <string name="register_new_product">Register POSM</string>
+    <string name="stock">Stock</string>
+    <string name="check_out">Check Out</string>
+    <string name="survey">Survey</string>
+    <string name="promo_products">Promo Products</string>
+    <string name="sales">Sales</string>
+    <string name="competitor_products">Competitor Products</string>
+    <string name="our_products">Our Products</string>
+    <string name="market_information">Market Information</string>
 </resources>

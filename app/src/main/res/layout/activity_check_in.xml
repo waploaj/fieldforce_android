@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".controllers.activities.CheckInActivity">
+
+    <include layout="@layout/main_toolbar" />
+
+    <ScrollView
+            app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="58dp"
+            app:layout_constraintVertical_bias="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/stockTitle"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="@string/stock"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/registerProductCardView"
+                    app:layout_constraintTop_toBottomOf="@id/stockTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_gravity="start|center_vertical"
+                        android:text="@string/register_new_product"
+                        android:padding="15dp"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                    android:id="@+id/marketInfoTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/registerProductCardView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    android:layout_margin="16dp"
+                    android:text="@string/market_information"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/ourProductsCardView"
+                    app:layout_constraintTop_toBottomOf="@id/marketInfoTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_gravity="start|center_vertical"
+                        android:text="@string/our_products"
+                        android:padding="15dp"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/competitorProductsCardView"
+                    app:layout_constraintTop_toBottomOf="@id/ourProductsCardView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_gravity="start|center_vertical"
+                        android:text="@string/competitor_products"
+                        android:padding="15dp"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/salesCardView"
+                    app:layout_constraintTop_toBottomOf="@id/competitorProductsCardView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_gravity="start|center_vertical"
+                        android:text="@string/sales"
+                        android:padding="15dp"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/promoProductsCardView"
+                    app:layout_constraintTop_toBottomOf="@id/salesCardView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_gravity="start|center_vertical"
+                        android:text="@string/promo_products"
+                        android:padding="15dp"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/surveyCardView"
+                    app:layout_constraintTop_toBottomOf="@id/promoProductsCardView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_gravity="start|center_vertical"
+                        android:text="@string/survey"
+                        android:padding="15dp"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+            </android.support.v7.widget.CardView>
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+            android:id="@+id/checkOutBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/check_out"
+            android:textAllCaps="false"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+</android.support.constraint.ConstraintLayout>
