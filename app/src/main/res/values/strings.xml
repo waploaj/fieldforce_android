@@ -33,4 +33,29 @@
     <string name="competitor_products">Competitor Products</string>
     <string name="our_products">Our Products</string>
     <string name="market_information">Market Information</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="search_product">Search Product…</string>
+    <string name="free">Free</string>
+    <string name="qty">Qty</string>
+    <string name="question_one">What are the THREE main reasons you didn\'t purchase [PRODUCT] from [COMPANY]?</string>
+    <string name="question_two">Do you like our Services?</string>
+    <string name="question_three">How is our Services?</string>
+    <string name="question_four">Rate our Services</string>
+    <string name="question_five">How likely are you to suggest our services to another client?</string>
+    <string name="question_six">Will you use our services again?</string>
+    <string name="question_seven">What items did you like the most?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+
+    <string-array name="products">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+        <item>Six</item>
+        <item>Seven</item>
+        <item>Eight</item>
+    </string-array>
 </resources>

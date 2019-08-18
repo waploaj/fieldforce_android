@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".controllers.activities.SurveyActivity">
+
+    <include layout="@layout/main_toolbar" />
+
+    <android.support.v7.widget.CardView
+            android:id="@+id/shopNameCardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainToolbar"
+            android:layout_marginTop="58dp"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/shopName"
+                tools:text="Test Store Name"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:padding="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </android.support.v7.widget.CardView>
+
+    <ScrollView
+            app:layout_constraintTop_toBottomOf="@id/shopNameCardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:overScrollMode="never"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+        <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/questionOne"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_margin="16dp"
+                        android:padding="8dp"
+                        android:text="@string/question_one"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                <EditText
+                        android:id="@+id/questionOneAnswer"
+                        app:layout_constraintTop_toBottomOf="@+id/questionOne"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        android:layout_margin="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/questionTwo"
+                        app:layout_constraintTop_toBottomOf="@+id/questionOneAnswer"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        android:layout_margin="16dp"
+                        android:text="@string/question_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                        android:id="@+id/questionTwoAnswer"
+                        app:layout_constraintTop_toBottomOf="@+id/questionTwo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        android:orientation="horizontal"
+                        android:layout_margin="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <RadioButton
+                            android:text="@string/yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                            android:text="@string/no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <TextView
+                        android:id="@+id/questionThree"
+                        app:layout_constraintTop_toBottomOf="@id/questionTwoAnswer"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        android:layout_margin="16dp"
+                        android:text="@string/question_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <EditText
+                        android:id="@+id/questionThreeAnswer"
+                        app:layout_constraintTop_toBottomOf="@+id/questionThree"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        android:layout_margin="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/questionFour"
+                        app:layout_constraintTop_toBottomOf="@id/questionThreeAnswer"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        android:layout_margin="16dp"
+                        android:text="@string/question_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <RatingBar
+                        android:id="@+id/questionFourAnswer"
+                        app:layout_constraintTop_toBottomOf="@+id/questionFour"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        style="@style/Widget.AppCompat.RatingBar.Indicator"
+                        android:numStars="5"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/questionFive"
+                        app:layout_constraintTop_toBottomOf="@id/questionFourAnswer"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        android:layout_margin="16dp"
+                        android:text="@string/question_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <com.rey.material.widget.Slider
+                        android:id="@+id/questionFiveAnswer"
+                        app:layout_constraintTop_toBottomOf="@+id/questionFive"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:sl_maxValue="100"
+                        app:sl_minValue="0"
+                        app:sl_value="10"
+                        app:sl_stepValue="5"
+                        app:sl_trackSize="5dp"
+                        android:layout_margin="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/questionSix"
+                        app:layout_constraintTop_toBottomOf="@+id/questionFiveAnswer"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        android:layout_margin="16dp"
+                        android:text="@string/question_six"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                        android:id="@+id/questionSixAnswer"
+                        app:layout_constraintTop_toBottomOf="@+id/questionSix"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        android:orientation="horizontal"
+                        android:layout_margin="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <RadioButton
+                            android:text="@string/yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                            android:text="@string/no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <TextView
+                        android:id="@+id/questionSeven"
+                        app:layout_constraintTop_toBottomOf="@+id/questionSixAnswer"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        android:layout_margin="16dp"
+                        android:text="@string/question_seven"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                <com.bytcode.lib.spinner.multiselectspinner.spinners.MultiSpinnerSearch
+                        android:id="@+id/questionSevenAnswer"
+                        app:layout_constraintTop_toBottomOf="@+id/questionSeven"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/sendSurveyBtn"
+                        android:layout_margin="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"/>
+
+                <Button
+                        android:id="@+id/sendSurveyBtn"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_margin="16dp"
+                        android:text="@string/save"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <Button
+                        android:id="@+id/cancelSurveyBtn"
+                        app:layout_constraintTop_toTopOf="@id/sendSurveyBtn"
+                        app:layout_constraintBottom_toBottomOf="@id/sendSurveyBtn"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@string/cancel"
+                        android:background="#f5f5f5"
+                        android:textColor="@color/gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"/>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
