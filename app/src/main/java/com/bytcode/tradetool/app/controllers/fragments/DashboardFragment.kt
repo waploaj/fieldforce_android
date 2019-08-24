@@ -13,6 +13,7 @@ import android.widget.CheckBox
 import android.widget.ImageButton
 import android.widget.Toast
 import com.bytcode.tradetool.app.R
+import com.bytcode.tradetool.app.controllers.activities.RegisterProductActivity
 import com.bytcode.tradetool.app.controllers.activities.StartVisitsActivity
 import com.bytcode.tradetool.app.interfaces.OnFragmentInteractionListener
 import com.bytcode.tradetool.app.utils.api.ApiClient
@@ -86,6 +87,7 @@ class DashboardFragment : Fragment(), OnFragmentInteractionListener {
 
             val visitOneCheckBox = visitTypeDialogView.findViewById<CheckBox>(R.id.visitOne)
             val visitTwoCheckBox = visitTypeDialogView.findViewById<CheckBox>(R.id.visitTwo)
+            val registerProduct = visitTypeDialogView.findViewById<CardView>(R.id.registerProduct)
 
             val visitDialogCloseBtn = visitTypeDialogView.findViewById<ImageButton>(R.id.closeBtn)
 
@@ -107,6 +109,11 @@ class DashboardFragment : Fragment(), OnFragmentInteractionListener {
 
             visitDialogCloseBtn.setOnClickListener {
                 dialog.dismiss()
+            }
+
+            registerProduct.setOnClickListener {
+                val intent = Intent(mView.context, RegisterProductActivity::class.java)
+                startActivity(intent)
             }
         }
 

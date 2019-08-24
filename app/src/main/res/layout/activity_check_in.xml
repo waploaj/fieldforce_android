@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"/>
 
             <android.support.v7.widget.CardView
-                    android:id="@+id/registerProductCardView"
+                    android:id="@+id/registerPOSMCardView"
                     app:layout_constraintTop_toBottomOf="@id/stockTitle"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,7 @@
 
             <TextView
                     android:id="@+id/marketInfoTitle"
-                    app:layout_constraintTop_toBottomOf="@+id/registerProductCardView"
+                    app:layout_constraintTop_toBottomOf="@+id/registerPOSMCardView"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0"
