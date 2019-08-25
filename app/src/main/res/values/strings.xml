@@ -15,7 +15,7 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="sentry_dsn">
-        https://6878b400f4024b3fa1bb23566198aa67@sentry.io/1489508
+        https://9635ae01e9a7496d99beab7b71bdbc9a@sentry.io/1313631
     </string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>

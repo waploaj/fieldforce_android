@@ -15,6 +15,7 @@ import android.widget.Toast
 import com.bytcode.tradetool.app.R
 import com.bytcode.tradetool.app.controllers.activities.RegisterProductActivity
 import com.bytcode.tradetool.app.controllers.activities.StartVisitsActivity
+import com.bytcode.tradetool.app.controllers.activities.SupplierLIstActivity
 import com.bytcode.tradetool.app.interfaces.OnFragmentInteractionListener
 import com.bytcode.tradetool.app.utils.api.ApiClient
 import com.bytcode.tradetool.app.utils.api.ApiService
@@ -112,7 +113,7 @@ class DashboardFragment : Fragment(), OnFragmentInteractionListener {
             }
 
             registerProduct.setOnClickListener {
-                val intent = Intent(mView.context, RegisterProductActivity::class.java)
+                val intent = Intent(mView.context, SupplierLIstActivity::class.java)
                 startActivity(intent)
             }
         }
