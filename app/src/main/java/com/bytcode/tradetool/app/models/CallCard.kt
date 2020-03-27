@@ -7,18 +7,6 @@ import com.google.gson.annotations.SerializedName
 
 class CallCard constructor(
 
-    /**
-     *
-     *
-     * "card_id": "1",
-    "location_id": "8",
-    "visit_id": "1",
-    "employee_id": "1",
-    "visit1": "mon",
-    "visit2": null,
-    "deleted": "0"
-     */
-
     @SerializedName("card_id")
     @Expose
     var cardId: String?,

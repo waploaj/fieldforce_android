@@ -2,13 +2,12 @@ package com.bytcode.tradetool.app.utils.api
 
 import com.bytcode.tradetool.app.utils.api.response.CallCardResponse
 import com.bytcode.tradetool.app.utils.api.response.CustomerResponse
-import com.bytcode.tradetool.app.utils.api.response.LoginResponse
+import com.bytcode.tradetool.app.utils.api.response.LocationItemsResponse
 import com.bytcode.tradetool.app.utils.api.response.SupplierResponse
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.Body
-import retrofit2.http.GET
 import retrofit2.http.POST
 
 
@@ -25,4 +24,7 @@ interface ApiClient {
 
     @POST("SupplierApi/get_suppliers")
     fun getCallSuppliers(@Body requestBody: RequestBody): Call<SupplierResponse>
+
+    @POST("ItemsApi/get_location_items")
+    fun getLocationProducts(@Body requestBody: RequestBody): Call<LocationItemsResponse>
 }
