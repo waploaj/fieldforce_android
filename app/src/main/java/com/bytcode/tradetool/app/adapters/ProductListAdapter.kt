@@ -5,11 +5,13 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.TextView
 import com.bytcode.tradetool.app.R
 import com.bytcode.tradetool.app.models.Item
 
-class ProductListAdapter(val context: Context, private val product: ArrayList<Item>, private val onClickProduct: (Item) -> Unit): RecyclerView.Adapter<ProductListAdapter.Holder>() {
+class ProductListAdapter(val context: Context, private var filteredProducts: ArrayList<Item>, private val products: ArrayList<Item>, private val onClickProduct: (Item) -> Unit): RecyclerView.Adapter<ProductListAdapter.Holder>(), Filterable {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(context).inflate(R.layout.product_layout, parent, false)
 
@@ -17,12 +19,11 @@ class ProductListAdapter(val context: Context, private val product: ArrayList<It
     }
 
     override fun getItemCount(): Int {
-        return product.count()
+        return filteredProducts.count()
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-
-        holder.bindListings(product[position])
+        holder.bindListings(filteredProducts[position])
     }
 
     inner class Holder(itemView: View?, val onClickProduct: (Item) -> Unit) : RecyclerView.ViewHolder(itemView!!) {
@@ -37,6 +38,32 @@ class ProductListAdapter(val context: Context, private val product: ArrayList<It
 
             itemView.setOnClickListener { onClickProduct(product) }
 
+        }
+    }
+
+    override fun getFilter(): Filter {
+        return object: Filter(){
+            override fun performFiltering(textValue: CharSequence?): FilterResults {
+                filteredProducts = if(textValue.isNullOrEmpty()){
+                    products
+                }else{
+                    val filteredData = ArrayList<Item>()
+                    for (product in products){
+                        if(product.name!!.contains(textValue, ignoreCase = true)) {
+                            filteredData.add(product)
+                        }
+                    }
+                    filteredData
+                }
+                val mFilterResults = FilterResults()
+                mFilterResults.values = filteredProducts
+                return mFilterResults
+            }
+
+            override fun publishResults(textValue: CharSequence?, filterResults: FilterResults?) {
+                filteredProducts = filterResults!!.values as ArrayList<Item>
+                notifyDataSetChanged()
+            }
         }
     }
 }

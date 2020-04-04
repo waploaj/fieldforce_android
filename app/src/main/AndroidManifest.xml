@@ -34,6 +34,12 @@
         <activity android:name=".controllers.activities.RegisterPosActivity">
         </activity>
         <activity android:name=".controllers.activities.RegisterProductActivity">
+            <meta-data
+                    android:name="android.app.searchable"
+                    android:resource="@xml/searchable" />
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
         </activity>
         <activity android:name=".controllers.activities.StartVisitsActivity">
         </activity>
