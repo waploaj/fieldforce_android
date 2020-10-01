@@ -58,4 +58,5 @@
         <item>Seven</item>
         <item>Eight</item>
     </string-array>
+    <string name="speak_now">Speak now</string>
 </resources>

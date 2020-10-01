@@ -5,7 +5,7 @@
         <shape>
             <gradient android:angle="270" android:centerX="0.5" android:centerY="0.5"/>
 
-            <corners android:radius="5dp"/>
+            <corners android:radius="0dp"/>
 
             <padding android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp"/>
         </shape>
@@ -16,7 +16,7 @@
 
             <solid android:color="#f1f1f1"/>
 
-            <corners android:radius="5dp"/>
+            <corners android:radius="0dp"/>
         </shape>
     </item>
 

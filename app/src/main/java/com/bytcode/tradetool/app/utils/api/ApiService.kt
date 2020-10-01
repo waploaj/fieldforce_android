@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ApiService {
 
     private var builder = Retrofit.Builder()
-        .baseUrl("http://192.168.8.100/api/public/api/")
+        .baseUrl("http://172.20.10.3/waploaj/public/api/")
         .addConverterFactory(GsonConverterFactory.create())
 
     private var retrofit = builder.build()
