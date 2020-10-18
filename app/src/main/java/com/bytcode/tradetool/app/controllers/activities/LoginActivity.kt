@@ -1,8 +1,10 @@
 package com.bytcode.tradetool.app.controllers.activities
 
+import android.app.Dialog
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.AppCompatTextView
 import android.widget.Toast
 import com.bytcode.tradetool.app.R
 import com.bytcode.tradetool.app.utils.api.ApiClient
@@ -31,23 +33,30 @@ class LoginActivity : AppCompatActivity() {
 
         loginButton.setOnClickListener{
 
-            val username = usernameField.text
-            val password = passwordField.text
+            val username = usernameField.text.toString()
+            val password = passwordField.text.toString()
 
-            if(username!!.isNotEmpty() && password!!.isNotEmpty()) {
+            val mDialog = Dialog(this@LoginActivity)
+            val mDialogView = layoutInflater.inflate(R.layout.progress_dialog, null)
+            mDialogView.findViewById<AppCompatTextView>(R.id.progressMessage).text = "Authenticating..."
+            mDialog.setContentView(mDialogView)
+
+            if(username.isNotEmpty() && password.isNotEmpty()) {
 
                 val requestBody: RequestBody = MultipartBody.Builder()
                     .setType(MultipartBody.FORM)
-                    .addFormDataPart("username", username.toString())
-                    .addFormDataPart("password", password.toString())
+                    .addFormDataPart("username", username)
+                    .addFormDataPart("password", password)
                     .build()
 
                 val call: Call<ResponseBody> = apiClient.authLogin(requestBody)
+                mDialog.show()
 
                 call.enqueue(
                     object : Callback<ResponseBody> {
                         override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                             if (response.isSuccessful) {
+//                                if(mDialog.isShowing) mDialog.hide()
                                 val mResponseBody = response.body()!!.string()
                                 val jsonResponse = JSONObject(mResponseBody)
 
@@ -64,6 +73,7 @@ class LoginActivity : AppCompatActivity() {
                                 }
 
                             } else {
+//                                if(mDialog.isShowing) mDialog.hide()
                                 if (response.code() == 400) {
                                     Toast.makeText(this@LoginActivity, "Invalid Email or Password", Toast.LENGTH_LONG)
                                         .show()
@@ -74,6 +84,7 @@ class LoginActivity : AppCompatActivity() {
                         }
 
                         override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                            if(mDialog.isShowing) mDialog.hide()
                             print("Failed to login: ${t.localizedMessage}")
                         }
                     }

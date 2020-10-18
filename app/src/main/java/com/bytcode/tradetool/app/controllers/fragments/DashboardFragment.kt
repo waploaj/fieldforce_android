@@ -16,6 +16,7 @@ import com.bytcode.tradetool.app.R
 import com.bytcode.tradetool.app.controllers.activities.RegisterProductActivity
 import com.bytcode.tradetool.app.controllers.activities.StartVisitsActivity
 import com.bytcode.tradetool.app.controllers.activities.SupplierLIstActivity
+import com.bytcode.tradetool.app.controllers.activities.components.StartADayDialog
 import com.bytcode.tradetool.app.interfaces.OnFragmentInteractionListener
 import com.bytcode.tradetool.app.utils.api.ApiClient
 import com.bytcode.tradetool.app.utils.api.ApiService
@@ -81,41 +82,8 @@ class DashboardFragment : Fragment(), OnFragmentInteractionListener {
         }
 
         startADay.setOnClickListener {
-            val visitTypeDialog = AlertDialog.Builder(mView.context)
-            val visitTypeDialogView = layoutInflater.inflate(R.layout.start_day_dialog, null)
-            visitTypeDialog.setView(visitTypeDialogView)
-            visitTypeDialog.setCancelable(false)
-
-            val visitOneCheckBox = visitTypeDialogView.findViewById<CheckBox>(R.id.visitOne)
-            val visitTwoCheckBox = visitTypeDialogView.findViewById<CheckBox>(R.id.visitTwo)
-            val registerProduct = visitTypeDialogView.findViewById<CardView>(R.id.registerProduct)
-
-            val visitDialogCloseBtn = visitTypeDialogView.findViewById<ImageButton>(R.id.closeBtn)
-
-            visitOneCheckBox!!.setOnClickListener{
-                if(visitOneCheckBox.isChecked){
-                    visitTwoCheckBox!!.isChecked = false
-                    App.sharedPrefs.visitType = "visitOne"
-                }
-            }
-            visitTwoCheckBox!!.setOnClickListener {
-                if(visitTwoCheckBox.isChecked){
-                    visitOneCheckBox.isChecked = false
-                    App.sharedPrefs.visitType = "visitTwo"
-                }
-            }
-
-            val dialog = visitTypeDialog.create()
-            dialog.show()
-
-            visitDialogCloseBtn.setOnClickListener {
-                dialog.dismiss()
-            }
-
-            registerProduct.setOnClickListener {
-                val intent = Intent(mView.context, SupplierLIstActivity::class.java)
-                startActivity(intent)
-            }
+            val startADayDialog = StartADayDialog()
+            startADayDialog.show(fragmentManager, StartADayDialog.TAG)
         }
 
         startVisits.setOnClickListener {

@@ -5,21 +5,21 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
+import android.widget.FrameLayout
 import com.bytcode.tradetool.app.R
 import com.bytcode.tradetool.app.utils.config.App
+import com.bytcode.tradetool.app.utils.helpers.DotProgressBar
 
 class SplashActivity : AppCompatActivity() {
 
     private var progressStatus = 0
-    // lateinit var pb: ProgressBar
-
+    private lateinit var dotProgressBar: DotProgressBar
     private val splashDelay = 5000L
     private var splashDelayHandler: Handler? = null
 
     private val splashRunnable: Runnable = Runnable {
 
         progressStatus = 0
-        // pb = findViewById(R.id.splashProgressBar)
         Thread(Runnable {
             do {
                 progressStatus += 1
@@ -27,9 +27,6 @@ class SplashActivity : AppCompatActivity() {
                     Thread.sleep(20)
                 } catch (e: InterruptedException) {
                     e.printStackTrace()
-                }
-                splashDelayHandler?.post {
-                    // pb.progress = progressStatus
                 }
                 if (progressStatus == 100) {
                     if(!App.sharedPrefs.isLoggedIn) {
@@ -55,13 +52,28 @@ class SplashActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
         setContentView(R.layout.activity_splash)
+        val frameLayout = findViewById<FrameLayout>(R.id.frame_layout)
+
+
+        dotProgressBar = DotProgressBar.Builder()
+            .setMargin(1)
+            .setAnimationDuration(2000)
+            .setDotBackground(R.drawable.ic_dot)
+            .setMaxScale(1f)
+            .setMinScale(0.3f)
+            .setNumberOfDots(5)
+            .setdotRadius(16)
+            .build(this@SplashActivity)
+        frameLayout.addView(dotProgressBar)
+        dotProgressBar.startAnimation()
+
         splashDelayHandler = Handler()
         splashDelayHandler!!.postDelayed(splashRunnable, splashDelay)
 
     }
 
     public override fun onDestroy() {
-
+        dotProgressBar.stopAnimation()
         if (splashDelayHandler != null) {
             splashDelayHandler!!.removeCallbacks(splashRunnable)
         }

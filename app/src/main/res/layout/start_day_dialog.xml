@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
+    <LinearLayout
             android:id="@+id/titleCardView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="0dp"
-            app:cardElevation="0dp"
+            android:orientation="vertical"
+            android:background="@color/colorWhite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -20,98 +17,105 @@
                 android:text="Start a Day"
                 android:textAlignment="center"
                 android:layout_gravity="center"
-                android:textSize="16sp"
-                android:padding="15dp"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="18sp"
+                android:padding="8dp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-        <ImageButton
-                android:id="@+id/closeBtn"
-                android:layout_gravity="end|center_vertical"
-                android:background="@android:color/transparent"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                app:srcCompat="@drawable/ic_close"
-                android:contentDescription="@null"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorBackground" />
 
-    </android.support.v7.widget.CardView>
+    </LinearLayout>
 
     <android.support.v7.widget.CardView
             android:id="@+id/visitIdOneCard"
-            app:layout_constraintTop_toBottomOf="@+id/titleCardView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="0dp"
             app:cardElevation="0dp"
+            android:clickable="true"
+            android:focusable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <CheckBox
-                    android:id="@+id/visitOne"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
+            <TextView
                     android:text="Visit One"
                     android:layout_margin="8dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textSize="14sp"
                     android:padding="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-            android:id="@+id/visitIdTwoCard"
-            app:layout_constraintTop_toBottomOf="@+id/visitIdOneCard"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="0dp"
-            app:cardElevation="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <CheckBox
-                    android:id="@+id/visitTwo"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:text="Visit Two"
-                    android:layout_margin="8dp"
-                    android:padding="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+        <com.suke.widget.SwitchButton
+                android:id="@+id/visitOne"
+                android:layout_gravity="end|center_vertical"
+                app:sb_checked_color="@color/colorPrimary"
+                android:layout_margin="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
 
     </android.support.v7.widget.CardView>
 
     <View
-            app:layout_constraintTop_toBottomOf="@+id/visitIdTwoCard"
-            android:id="@+id/separator"
-            android:background="@color/gray"
             android:layout_width="match_parent"
-            android:layout_height="1dp"/>
+            android:layout_height="0.5dp"
+            android:layout_marginTop="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/colorBackground" />
 
     <android.support.v7.widget.CardView
-            android:id="@+id/registerProduct"
-            app:layout_constraintTop_toBottomOf="@+id/separator"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0"
+            android:id="@+id/visitIdTwoCard"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="0dp"
             app:cardElevation="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="Visit Two"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textSize="14sp"
+                    android:layout_margin="8dp"
+                    android:padding="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        <com.suke.widget.SwitchButton
+                android:id="@+id/visitTwo"
+                android:layout_gravity="end|center_vertical"
+                app:sb_checked_color="@color/colorPrimary"
+                android:layout_margin="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+    </android.support.v7.widget.CardView>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorBackground" />
+
+    <android.support.v7.widget.CardView
+            android:id="@+id/registerProduct"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp"
+            android:clickable="true"
+            android:focusable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -125,10 +129,6 @@
                 android:layout_height="wrap_content"/>
 
         <TextView
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:text="Register new items"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
@@ -141,4 +141,4 @@
 
     </android.support.v7.widget.CardView>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

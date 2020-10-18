@@ -1,40 +1,97 @@
 <resources>
 
-    <style name="TradeToolMaterialTheme" parent="SuperMaterialTheme">
-
-    </style>
-
-    <!-- Base application theme. -->
+    <style name="TradeToolMaterialTheme" parent="SuperMaterialTheme"/>
     <style name="SuperMaterialTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
-        <!--<item name="colorControlHighlight">@color/colorAccent</item>-->
         <item name="colorControlNormal">@color/colorAccent</item>
         <item name="colorButtonNormal">@color/colorPrimaryDark</item>
         <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/nunito_semi_bold</item>
     </style>
+
     <style name="TradeToolMaterialTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="TradeToolMaterialTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="tabIconTint">@color/colorPrimary</item>
     </style>
+
     <style name="TradeToolMaterialTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="tabIconTint">@color/colorPrimary</item>
     </style>
+
     <declare-styleable name="MaterialMenuView">
-        <attr name="mm_color" format="color"/>
-        <attr name="mm_scale" format="integer"/>
-        <attr name="mm_transformDuration" format="integer"/>
-        <attr name="mm_pressedDuration" format="integer"/>
-        <attr name="mm_strokeWidth" format="integer"/>
-        <attr name="mm_rtlEnabled" format="boolean"/>
+        <attr name="mm_color" format="color" />
+        <attr name="mm_scale" format="integer" />
+        <attr name="mm_transformDuration" format="integer" />
+        <attr name="mm_pressedDuration" format="integer" />
+        <attr name="mm_strokeWidth" format="integer" />
+        <attr name="mm_rtlEnabled" format="boolean" />
     </declare-styleable>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+    </style>
+
+    <style name="dimen_match_parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="dimen_wrap_content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="dimen_0dp">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="dimen_width_match_height_wrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="dimen_width_0dp_height_wrap">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AppTextInputDate" parent="Widget.AppCompat.EditText">
+        <item name="android:singleLine">true</item>
+        <item name="singleLine">true</item>
+        <item name="android:editable">false</item>
+    </style>
+
+    <style name="AppInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" />
+
+    <style name="AppTextInput" parent="Widget.AppCompat.EditText">
+        <item name="android:singleLine">true</item>
+        <item name="singleLine">true</item>
+    </style>
+
+    <style name="AppTextInputNumber" parent="Widget.AppCompat.EditText">
+        <item name="android:singleLine">true</item>
+        <item name="singleLine">true</item>
+        <item name="android:inputType">number</item>
+    </style>
+
+    <style name="AppTextInputMultiline" parent="Widget.AppCompat.EditText">
+        <item name="android:lines">5</item>
+    </style>
+
+    <style name="AppSpinner" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:paddingBottom">15dp</item>
+    </style>
 </resources>

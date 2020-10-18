@@ -5,36 +5,39 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorAccentBackground"
         tools:context=".controllers.activities.LoginActivity">
 
-    <TextView
+    <ImageView
             android:id="@+id/logo"
-            android:text="Trade Tool"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_margin="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="180dp"/>
+            app:srcCompat="@drawable/ic_tradewave"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="80dp"
+            android:contentDescription="@null" />
 
     <TextView
             android:id="@+id/loginTitle"
             android:text="Login"
+            android:textColor="@color/colorAccent"
             app:layout_constraintTop_toBottomOf="@id/logo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_margin="16dp"
+            android:layout_margin="8dp"
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-    <android.support.design.card.MaterialCardView
+    <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="32dp"
-            app:cardCornerRadius="0dp"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="9dp"
             app:cardElevation="0dp"
+            app:contentPadding="16dp"
             app:layout_constraintTop_toBottomOf="@+id/loginTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,41 +45,59 @@
             android:layout_marginBottom="16dp"
             app:layout_constraintVertical_bias="0.0">
 
-        <android.support.constraint.ConstraintLayout
+        <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/usernameField"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:hint="Username"
-                    android:background="@drawable/input_edit_text_background"
-                    android:padding="10dp"
-                    android:drawableStart="@drawable/ic_user"
-                    android:textAlignment="center"
-                    android:layout_margin="16dp"
+            <android.support.design.widget.TextInputLayout
+                    style="@style/AppInputLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:drawableLeft="@drawable/ic_user"/>
+                    android:layout_height="wrap_content">
 
-            <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/passwordField"
-                    app:layout_constraintTop_toBottomOf="@id/usernameField"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:background="@drawable/input_edit_text_background"
-                    android:padding="10dp"
-                    android:hint="Password"
-                    android:drawableStart="@drawable/ic_lock_another"
-                    android:textAlignment="center"
-                    android:inputType="textPassword"
-                    android:maxLength="12"
-                    android:layout_margin="16dp"
+                <android.support.design.widget.TextInputEditText
+                        android:id="@+id/usernameField"
+                        style="@style/AppTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingLeft="16dp"
+                        android:paddingEnd="16dp"
+                        android:paddingRight="16dp"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorTextPrimary"
+                        android:drawableStart="@drawable/ic_user"
+                        android:drawableLeft="@drawable/ic_user"
+                        android:drawablePadding="8dp"
+                        android:hint="Username"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                    style="@style/AppInputLayout"
+                    android:layout_marginTop="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:drawableLeft="@drawable/ic_lock_another"/>
+                    android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                        android:id="@+id/passwordField"
+                        style="@style/AppTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingLeft="16dp"
+                        android:paddingEnd="16dp"
+                        android:paddingRight="16dp"
+                        android:inputType="textPassword"
+                        android:drawableStart="@drawable/ic_lock_another"
+                        android:drawableLeft="@drawable/ic_lock_another"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorTextPrimary"
+                        android:text=""
+                        android:drawablePadding="8dp"
+                        android:hint="Password"/>
+
+            </android.support.design.widget.TextInputLayout>
 
             <Button
                     android:id="@+id/loginButton"
@@ -84,17 +105,20 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:layout_margin="16dp"
+                    android:layout_marginTop="16dp"
                     android:text="Login"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/nunito_bold"
                     android:padding="10dp"
-                    android:textColor="@color/colorTextPrimary"
+                    android:textColor="@color/colorWhite"
+                    android:background="@drawable/button_round"
                     android:textAllCaps="false"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-        </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
 
-    </android.support.design.card.MaterialCardView>
+    </android.support.v7.widget.CardView>
 
 
 </android.support.constraint.ConstraintLayout>
