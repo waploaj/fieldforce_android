@@ -1,31 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<layout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".controllers.activities.SupplierLIstActivity">
+        xmlns:tools="http://schemas.android.com/tools">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            style="@style/dimen_match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context=".controllers.activities.SupplierLIstActivity">
 
-    <EditText
-            android:id="@+id/searchForm"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"/>
+        <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/app_bar_collapsible"
+                style="@style/dimen_width_match_height_wrap"
+                android:theme="@style/AppTheme.AppBarOverlay">
 
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    style="@style/toolbar_style"
+                    android:theme="@style/customerListToolBarStyle"
+                    app:popupTheme="@style/AppTheme.PopupOverlay">
 
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/suppliersListRecyclerView"
-            app:layout_constraintTop_toBottomOf="@id/searchForm"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0"
-            android:layout_marginTop="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/end_day_whole_salers_list"/>
+                <androidx.cardview.widget.CardView
+                        style="@style/dimen_width_match_height_wrap"
+                        android:layout_margin="8dp"
+                        android:background="@color/colorWhite"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout style="@style/dimen_width_match_height_wrap">
+
+                        <androidx.appcompat.widget.SearchView
+                                android:id="@+id/sv_customers_filter"
+                                style="@style/dimen_width_0dp_height_wrap"
+                                android:background="@color/colorWhite"
+                                android:paddingStart="32dp"
+                                android:paddingLeft="32dp"
+                                android:paddingEnd="40dp"
+                                android:paddingRight="40dp"
+                                app:closeIcon="@drawable/ic_filter"
+                                app:iconifiedByDefault="false"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@id/btn_back_pressed"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:queryBackground="@android:color/transparent"
+                                app:queryHint="Search..."
+                                app:searchIcon="@null" />
+
+                        <ImageButton
+                                android:id="@+id/btn_back_pressed"
+                                style="@style/toolbar_back_button_style"
+                                android:contentDescription="@null"
+                                app:layout_constraintBottom_toBottomOf="@id/sv_customers_filter"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/sv_customers_filter"
+                                app:srcCompat="@drawable/ic_arrow_back" />
+
+                        <ImageButton
+                                android:id="@+id/btn_filter"
+                                style="@style/go_to_button_style"
+                                android:contentDescription="@null"
+                                app:layout_constraintBottom_toBottomOf="@id/sv_customers_filter"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/sv_customers_filter"
+                                app:srcCompat="@drawable/ic_filter" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/dimen_match_parent"
+                android:background="#FAFAFA"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/customer_list_swipe_refresh"
+                    style="@style/dimen_0dp"
+                    android:background="#DCDEE3"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/suppliersListRecyclerView"
+                        style="@style/dimen_match_parent"
+                        android:orientation="horizontal"
+                        android:paddingBottom="12dp"
+                        tools:listitem="@layout/supplier_list_view_place_holder" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmerFrameLayout"
+                    style="@style/dimen_0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shimmer_auto_start="true">
+
+                <include layout="@layout/customer_list_placeholder_shimmer_contents" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

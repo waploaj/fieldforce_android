@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/dimen_width_match_height_wrap"
+        android:layout_margin="@dimen/dimen_8_dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_container"
+            android:layout_height="wrap_content"
+            style="@style/dimen_width_match_height_wrap"
+            android:padding="@dimen/dimen_8_dp">
+
+        <View
+                android:id="@+id/tv_image_place_holder"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/circle_background"
+                app:backgroundTint="@color/colorGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <LinearLayout
+                android:id="@+id/ll_details_container"
+                style="@style/dimen_width_0dp_height_wrap"
+                android:layout_marginBottom="@dimen/dimen_8_dp"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_image_place_holder"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_image_place_holder"
+                app:layout_constraintTop_toTopOf="@id/tv_image_place_holder">
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_16_dp"
+                    android:layout_marginStart="@dimen/dimen_8_dp"
+                    android:layout_marginTop="@dimen/dimen_8_dp"
+                    android:background="@color/colorGrey"
+                    android:paddingStart="@dimen/dimen_8_dp"
+                    android:paddingEnd="0dp"
+                    android:layout_marginLeft="@dimen/dimen_8_dp"
+                    android:paddingRight="0dp"
+                    android:paddingLeft="@dimen/dimen_8_dp" />
+
+            <View
+                    android:layout_width="200dp"
+                    android:layout_height="@dimen/dimen_16_dp"
+                    android:layout_marginStart="@dimen/dimen_8_dp"
+                    android:background="@color/colorGrey"
+                    android:paddingStart="@dimen/dimen_8_dp"
+                    android:paddingEnd="0dp"
+                    android:layout_marginTop="@dimen/dimen_8_dp"
+                    android:layout_marginLeft="@dimen/dimen_8_dp"
+                    android:paddingLeft="@dimen/dimen_8_dp"
+                    android:paddingRight="0dp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

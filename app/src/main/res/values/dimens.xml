@@ -5,4 +5,50 @@
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+
+    <dimen name="dimen_16_dp">16dp</dimen>
+    <dimen name="dimen_8_dp">8dp</dimen>
+    <dimen name="splash_activity_progress_dimen">32dp</dimen>
+    <dimen name="iv_close_padding">8dp</dimen>
+    <dimen name="iv_close_margin">8dp</dimen>
+    <dimen name="tv_terms_privacy_margin">16dp</dimen>
+    <dimen name="tv_terms_privacy_margin_top">24dp</dimen>
+    <dimen name="tv_forgot_password_margin_end">16dp</dimen>
+    <dimen name="forgot_password_text_size">16sp</dimen>
+    <dimen name="tv_login_text_size">24sp</dimen>
+    <dimen name="tv_start_screen_title_margin_start">16dp</dimen>
+    <dimen name="edit_text_label_text_size">16sp</dimen>
+    <dimen name="edit_text_label_margin_start">16dp</dimen>
+    <dimen name="edit_text_label_margin_top">16dp</dimen>
+    <dimen name="start_screens_et_margin">16dp</dimen>
+    <dimen name="et_label_margin_top">24dp</dimen>
+    <dimen name="et_start_screen_margin_top">16dp</dimen>
+    <dimen name="continue_button_dimension">57dp</dimen>
+    <dimen name="continue_button_margin">16dp</dimen>
+    <dimen name="login_screen_scroll_view_margin_bottom">16dp</dimen>
+    <dimen name="enter_email_address_text_size">14sp</dimen>
+    <dimen name="tv_show_hide_password_padding_start">8dp</dimen>
+    <dimen name="tv_show_hide_password_padding_end">4dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="tv_user_profile_placeholder_text_size">20sp</dimen>
+    <dimen name="tv_user_photo_placeholder_dimen">56dp</dimen>
+    <dimen name="btn_nav_logout_padding">8dp</dimen>
+    <dimen name="btn_nav_logout_drawable_padding">4dp</dimen>
+    <dimen name="kopagas_smartsale_app_needs_location_access_permission_text_size">14sp</dimen>
+    <dimen name="badge_text_size">12sp</dimen>
+    <dimen name="badge_padding">6dp</dimen>
+    <dimen name="register_landlord_fields_text_size">15sp</dimen>
+    <dimen name="et_fields_text_size">15sp</dimen>
+    <dimen name="dimen_32_dp">32dp</dimen>
+    <dimen name="map_settings_button_size">40dp</dimen>
+    <dimen name="toast_corner_radius">15dp</dimen>
+    <dimen name="tv_image_place_holder_dimen">56dp</dimen>
+    <dimen name="calendar_view_tile_height">40dp</dimen>
+    <dimen name="startup_activity_text_size">15sp</dimen>
+    <dimen name="dimen_4dp">4dp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="dimen_24dp">24dp</dimen>
+
+    <dimen name="on_boarding_image_padding">64dp</dimen>
 </resources>

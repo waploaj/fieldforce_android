@@ -8,6 +8,7 @@ import androidx.cardview.widget.CardView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatButton
 import dev.encipher.tradewave.app.R
 import dev.encipher.tradewave.app.controllers.activities.SupplierLIstActivity
 import dev.encipher.tradewave.app.utils.config.App
@@ -31,7 +32,7 @@ class StartADayDialog : BottomSheetDialogFragment() {
     private fun bindUI() {
         val visitOneCheckBox = mView.findViewById<SwitchButton>(R.id.visitOne)
         val visitTwoCheckBox = mView.findViewById<SwitchButton>(R.id.visitTwo)
-        val registerProduct = mView.findViewById<androidx.cardview.widget.CardView>(R.id.registerProduct)
+        val registerProduct = mView.findViewById<AppCompatButton>(R.id.registerProduct)
 
         visitOneCheckBox!!.setOnCheckedChangeListener { _, isChecked ->
             if(isChecked){

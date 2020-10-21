@@ -94,4 +94,51 @@
     <style name="AppSpinner" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="android:paddingBottom">15dp</item>
     </style>
+
+    <style name="toolbar_style" parent="dimen_width_match_height_wrap">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="layout_scrollFlags">scroll|enterAlways</item>
+        <item name="layout_collapseMode">pin</item>
+        <item name="android:contentInsetLeft">0dp</item>
+        <item name="android:contentInsetRight">0dp</item>
+        <item name="android:contentInsetStart">0dp</item>
+        <item name="contentInsetLeft">0dp</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="android:contentInsetEnd">0dp</item>
+        <item name="contentInsetRight">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+    </style>
+
+    <style name="customerListToolBarStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:dropDownItemStyle">@style/myDropDownItemStyle</item>
+        <item name="android:dropDownListViewStyle">@style/myDropDownListViewStyle</item>
+    </style>
+
+    <style name="myDropDownItemStyle" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="myDropDownListViewStyle" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="toolbar_back_button_style" parent="dimen_wrap_content">
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:src">@drawable/ic_arrow_back</item>
+        <item name="android:background">@drawable/circle_background_transparent</item>
+    </style>
+
+    <style name="go_to_button_style" parent="dimen_wrap_content">
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:src">@drawable/ic_filter</item>
+        <item name="android:background">@drawable/circle_background</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
 </resources>

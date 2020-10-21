@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/dimen_match_parent"
+        android:alpha="0.3"
+        android:orientation="vertical">
+
+    <include layout="@layout/supplier_list_view_place_holder" />
+    <include layout="@layout/supplier_list_view_place_holder" />
+    <include layout="@layout/supplier_list_view_place_holder" />
+    <include layout="@layout/supplier_list_view_place_holder" />
+    <include layout="@layout/supplier_list_view_place_holder" />
+    <include layout="@layout/supplier_list_view_place_holder" />
+    <include layout="@layout/supplier_list_view_place_holder" />
+    <include layout="@layout/supplier_list_view_place_holder" />
+    <include layout="@layout/supplier_list_view_place_holder" />
+    <include layout="@layout/supplier_list_view_place_holder" />
+    <include layout="@layout/supplier_list_view_place_holder" />
+    <include layout="@layout/supplier_list_view_place_holder" />
+    <include layout="@layout/supplier_list_view_place_holder" />
+    <include layout="@layout/supplier_list_view_place_holder" />
+</LinearLayout>

@@ -60,6 +60,11 @@
                 android:theme="@style/TradeToolMaterialTheme.NoActionBar">
         </activity>
         <activity android:name="dev.encipher.tradewave.app.controllers.activities.LoginActivity"/>
+
+        <provider
+                android:name=".utils.helpers.providers.SuppliersSuggestionsProvider"
+                android:authorities="dev.encipher.tradewave.app.utils.helpers.providers.SuppliersSuggestionsProvider"
+                android:exported="false" />
     </application>
 
 </manifest>

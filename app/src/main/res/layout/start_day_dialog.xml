@@ -109,36 +109,24 @@
             android:layout_height="0.5dp"
             android:background="@color/colorBackground" />
 
-    <androidx.cardview.widget.CardView
+    <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/registerProduct"
-            android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="0dp"
             app:cardElevation="0dp"
             android:clickable="true"
             android:focusable="true"
+            android:background="@drawable/button_corners"
+            android:padding="16dp"
+            android:drawablePadding="8dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:drawableTint="@color/colorWhite"
+            android:text="Register New Items"
+            android:textColor="@color/colorWhite"
+            android:drawableLeft="@drawable/ic_iconmonstr_shipping_box_8"
+            android:drawableStart="@drawable/ic_iconmonstr_shipping_box_8"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        <ImageView
-                android:contentDescription="@null"
-                app:srcCompat="@drawable/ic_iconmonstr_shipping_box_8"
-                android:tint="@color/colorPrimary"
-                android:layout_margin="8dp"
-                android:padding="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <TextView
-                android:text="Register new items"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="bold"
-                android:padding="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginLeft="40dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-    </androidx.cardview.widget.CardView>
+            android:layout_height="wrap_content"
+            android:gravity="start" />
 
 </LinearLayout>
