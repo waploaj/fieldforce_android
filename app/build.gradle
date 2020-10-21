@@ -7,14 +7,14 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 30
     defaultConfig {
-        applicationId "com.bytcode.tradetool.app"
+        applicationId "dev.encipher.tradewave.app"
         minSdkVersion 16
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         multiDexEnabled true
     }
 
@@ -23,9 +23,9 @@ android {
         sourceCompatibility = "8"
     }
 
-    dataBinding {
-        enabled = false
-    }
+   buildFeatures{
+       dataBinding false
+   }
 
     buildTypes {
         release {
@@ -45,30 +45,29 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
-    implementation 'com.android.support:cardview-v7:28.0.0'
-    implementation 'com.android.support:support-v4:28.0.0'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support:multidex:1.0.3'
-    implementation 'com.android.support:gridlayout-v7:28.0.0'
-    implementation 'com.android.support:customtabs:28.0.0'
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'androidx.browser:browser:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
 
     //implementation 'com.google.android.gms:play-services-maps:16.1.0'
 //    implementation 'com.google.android.gms:play-services-ads:17.2.0'
-    implementation 'com.android.support:gridlayout-v7:28.0.0'
-    kapt 'com.android.databinding:compiler:3.1.4'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
 
     //implementation 'com.google.firebase:firebase-core:16.0.9'
     //implementation 'com.google.firebase:firebase-messaging:18.0.0'
 
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     // Kotlin anko
     implementation "org.jetbrains.anko:anko:$anko_version"
@@ -76,16 +75,16 @@ dependencies {
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
 
     // Gson dependencies
-    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.github.josedaudi:MultiSelectionSpinner:56437fe5e2'
 
     implementation 'io.sentry:sentry-android:1.7.16'
     implementation 'org.slf4j:slf4j-nop:1.7.25'
 
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
-    implementation("com.squareup.okhttp3:okhttp:3.14.1")
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
     implementation 'com.nineoldandroids:library:2.4.0+'
 
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.3.1'

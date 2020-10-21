@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        package="com.bytcode.tradetool.app">
+        package="dev.encipher.tradewave.app">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-            android:name=".utils.config.App"
+            android:name="dev.encipher.tradewave.app.utils.config.App"
             android:allowBackup="true"
             android:usesCleartextTraffic="true"
             android:icon="@mipmap/ic_launcher"
@@ -15,25 +15,25 @@
             android:supportsRtl="true"
             android:theme="@style/TradeToolMaterialTheme"
             tools:targetApi="m">
-        <activity android:name=".controllers.activities.SupplierLIstActivity">
+        <activity android:name="dev.encipher.tradewave.app.controllers.activities.SupplierLIstActivity">
         </activity>
-        <activity android:name=".controllers.activities.SurveyActivity">
+        <activity android:name="dev.encipher.tradewave.app.controllers.activities.SurveyActivity">
         </activity>
-        <activity android:name=".controllers.activities.SalesActivity">
+        <activity android:name="dev.encipher.tradewave.app.controllers.activities.SalesActivity">
         </activity>
-        <activity android:name=".controllers.activities.CheckInActivity">
+        <activity android:name="dev.encipher.tradewave.app.controllers.activities.CheckInActivity">
         </activity>
         <activity
-                android:name=".controllers.activities.CustomerListActivity"
+                android:name="dev.encipher.tradewave.app.controllers.activities.CustomerListActivity"
                 android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".controllers.activities.CompetitorProductsActivity">
+        <activity android:name="dev.encipher.tradewave.app.controllers.activities.CompetitorProductsActivity">
         </activity>
-        <activity android:name=".controllers.activities.PmiMaterialsActivity">
+        <activity android:name="dev.encipher.tradewave.app.controllers.activities.PmiMaterialsActivity">
         </activity>
-        <activity android:name=".controllers.activities.RegisterPosActivity">
+        <activity android:name="dev.encipher.tradewave.app.controllers.activities.RegisterPosActivity">
         </activity>
-        <activity android:name=".controllers.activities.RegisterProductActivity">
+        <activity android:name="dev.encipher.tradewave.app.controllers.activities.RegisterProductActivity">
             <meta-data
                     android:name="android.app.searchable"
                     android:resource="@xml/searchable" />
@@ -41,13 +41,13 @@
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
-        <activity android:name=".controllers.activities.StartVisitsActivity">
+        <activity android:name="dev.encipher.tradewave.app.controllers.activities.StartVisitsActivity">
         </activity>
-        <activity android:name=".controllers.activities.EndDayActivity">
+        <activity android:name="dev.encipher.tradewave.app.controllers.activities.EndDayActivity">
         </activity>
-        <activity android:name=".controllers.activities.StartDayActivity">
+        <activity android:name="dev.encipher.tradewave.app.controllers.activities.StartDayActivity">
         </activity>
-        <activity android:name=".controllers.activities.SplashActivity">
+        <activity android:name="dev.encipher.tradewave.app.controllers.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -55,11 +55,11 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".controllers.activities.HomeActivity"
+                android:name="dev.encipher.tradewave.app.controllers.activities.HomeActivity"
                 android:label="@string/title_activity_home"
                 android:theme="@style/TradeToolMaterialTheme.NoActionBar">
         </activity>
-        <activity android:name=".controllers.activities.LoginActivity"/>
+        <activity android:name="dev.encipher.tradewave.app.controllers.activities.LoginActivity"/>
     </application>
 
 </manifest>
