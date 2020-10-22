@@ -1,86 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/productContent"
+        android:layout_margin="@dimen/dimen_8_dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <TextView
-            android:id="@+id/productName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="10dp"
-            tools:text="Test Sample"
-            android:textStyle="bold" />
-    <LinearLayout
-            android:padding="16dp"
-            android:orientation="horizontal"
+    <androidx.cardview.widget.CardView
+            app:contentPadding="@dimen/dimen_16_dp"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="0dp"
+            android:foreground="?attr/selectableItemBackground"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
         <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <ImageButton
-                    android:id="@+id/addQtyBtn"
+            <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@null"
-                    android:layout_gravity="center"
-                    android:tint="@color/white"
-                    android:padding="6dp"
-                    android:background="@drawable/button_cut_right"
-                    app:srcCompat="@drawable/ic_add" />
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:id="@+id/productName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        tools:text="Test Sample"
+                        android:textStyle="bold" />
 
-            <EditText
-                    android:id="@+id/qtyValue"
-                    android:layout_width="100dp"
-                    android:layout_height="24dp"
-                    android:background="@drawable/input_edit_text_background_no_corners"
-                    android:layout_gravity="center"
-                    android:inputType="number"
-                    android:text="0"
-                    android:textSize="12sp"
-                    android:textAlignment="center"
-                    android:maxLength="10" />
+                <androidx.appcompat.widget.AppCompatButton
+                        android:text="Remove"
+                        android:drawableStart="@drawable/ic_delete"
+                        android:drawableLeft="@drawable/ic_delete"
+                        android:drawablePadding="5dp"
+                        android:textAllCaps="false"
+                        android:textSize="11sp"
+                        android:paddingEnd="@dimen/dimen_16_dp"
+                        android:paddingStart="@dimen/dimen_16_dp"
+                        android:layout_marginTop="@dimen/dimen_16_dp"
+                        android:layout_gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@drawable/button_round_outlined"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"/>
 
-            <ImageButton
-                    android:id="@+id/minusQtyBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@null"
-                    android:layout_gravity="center"
-                    android:tint="@color/white"
-                    android:background="@drawable/button_cut_left"
-                    android:padding="6dp"
-                    app:srcCompat="@drawable/ic_minus" />
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
+                <LinearLayout
+                        android:layout_marginTop="@dimen/dimen_4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                    <ImageButton
+                            android:id="@+id/addQtyBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@null"
+                            android:layout_gravity="center"
+                            android:tint="@color/white"
+                            android:padding="10dp"
+                            android:background="@drawable/button_cut_right"
+                            app:srcCompat="@drawable/ic_add" />
+
+                    <EditText
+                            android:id="@+id/qtyValue"
+                            android:layout_width="100dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/input_edit_text_background_no_corners"
+                            android:layout_gravity="center"
+                            android:inputType="number"
+                            android:text="0"
+                            android:textSize="12sp"
+                            android:textAlignment="center"
+                            android:maxLength="10" />
+
+                    <ImageButton
+                            android:id="@+id/minusQtyBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@null"
+                            android:layout_gravity="center"
+                            android:tint="@color/white"
+                            android:background="@drawable/button_cut_left"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/ic_minus" />
+
+                </LinearLayout>
+
+                <EditText
+                        android:id="@+id/totalPrice"
+                        android:layout_marginTop="@dimen/dimen_8_dp"
+                        android:background="@drawable/input_edit_text_background_grey"
+                        android:textSize="12sp"
+                        android:text="0.00"
+                        android:focusable="false"
+                        android:textAlignment="center"
+                        android:layout_gravity="end"
+                        android:padding="5dp"
+                        android:clickable="false"
+                        android:inputType="none"
+                        android:enabled="false"
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal" />
+
+            </LinearLayout>
         </LinearLayout>
 
-        <EditText
-                android:id="@+id/totalPrice"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:background="@drawable/input_edit_text_background_grey"
-                android:textSize="12sp"
-                android:text="0.00"
-                android:focusable="false"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:padding="5dp"
-                android:clickable="false"
-                android:inputType="none"
-                android:enabled="false"
-                android:layout_width="match_parent"
-                android:layout_height="23dp"
-                android:gravity="center_horizontal" />
-
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
